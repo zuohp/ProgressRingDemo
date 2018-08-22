@@ -3,4 +3,4 @@
 
 # 效果
 
-![](https://github.com/zuohp/ProgressRingDemo/gif/ezgif.com-video-to-gif.gif)
+![](https://github.com/zuohp/ProgressRingDemo/raw/master/gif/ezgif.com-video-to-gif.gif)
