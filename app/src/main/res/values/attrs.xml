@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="Progress_ring">
+        <!--//圆环宽度-->
+        <attr name="doughnutWidth" format="float"/>
+        
+    </declare-styleable>
+</resources>
