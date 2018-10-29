@@ -33,6 +33,8 @@ public class Progress_ring extends View {
             Color.argb(MIN_ALPHA, RED, GREEN, BLUE),
             Color.argb(MAX_ALPHA, RED, GREEN, BLUE)};
 
+    private RectF rectF = new RectF();
+    private SweepGradient sweepGradient = new SweepGradient(0, 0, doughnutColors, null);
 
     private Thread thread = new Thread(){
         @Override
@@ -83,7 +85,6 @@ public class Progress_ring extends View {
 
     }
 
-    @SuppressLint("DrawAllocation")
     @Override
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
@@ -99,11 +100,11 @@ public class Progress_ring extends View {
         }
 
         //圆环外接矩形
-        RectF rectF = new RectF(raduis-mPadding, raduis-mPadding, -(raduis-mPadding), -(raduis-mPadding));
         initPaint();
         mPaint.setStrokeWidth(doughnutWidth);
         mPaint.setStyle(Paint.Style.STROKE);
-        mPaint.setShader(new SweepGradient(0, 0, doughnutColors, null));
+        mPaint.setShader(sweepGradient);
+        rectF.set(-(raduis-mPadding), -(raduis-mPadding), (raduis-mPadding),(raduis-mPadding));
         canvas.drawArc(rectF, 0, 360, false, mPaint);
 
         //画旋转头部圆
